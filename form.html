@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="お問い合わせ用">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>form</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="wrapper">
+	<!-- ヘッダー -->
+	<header class="header">
+		<div class="header_container">
+			<div class="menu_container">
+				<img class="menu_open" src="images/ham-menu-image01.png" alt="メニューバー開">
+				<img class="menu_close" src="images/ham-menu-image02.png"  alt="メニューバー閉">    
+			</div>
+			<h1 class="top"><a href="home.html"></a>湯澤のホームページ</h1>
+		</div>
+	</header>
+		<nav class="menu">
+			<ul>
+				<li class="link ind"><a href="index.html">トップ</a></li>	
+				<li class="link hobby"><a href="hobby.html">趣味</a></li>
+				<li class="link rec"><a href="recently.html">最近</a></li>
+				<li class="link imp"><a href="improve.html">スマブラ解説</a></li>
+				<li class="link sou"><a href="source.html">参考</a></li>
+				<li class="link form"><a href="form.html">お問い合わせ</a></li>
+			</ul>
+		</nav>
+	<!-- ヘッダー　ここまで -->
+	<!-- メイン -->
+	
+	<main>
+		<h2>お問い合わせ</h2>
+		<!-- result.htmlは追加していません -->
+		<form method="GET" action="result.html">
+			<div class="formdiv">
+				<label for="kind">あなたの趣味は何ですか？</label><br>
+				<select id="kind" name="kind">
+					<option >選択してください</option>
+					<option value="reservation">縺ゅ↑縺溘?雜｣蜻ｳ縺ｯ菴輔〒縺吶°</option>
+					<option value="event">縺碑?讌ｭ縺ｯ菴輔＆繧後※繧九ｓ縺ｧ縺吶°?</option>
+					<option value="contact">閾ｪ蛻?ｒ縺吶＃縺?→諤昴＞縺ｾ縺吶°?</option>
+				</select>
+			</div>
+			<div class="formdiv">
+				aaaaaaaaaaaaaaaaaaa？<br>
+				<label><input type="radio" name="first" value="yes" checked>はい</label>
+				<label><input type="radio" name="first" value="no">いいえ</label>
+			</div >
+			<div class="formdiv">
+				貉ｯ貔､繧堤衍繧九％縺ｨ縺ｫ縺ｪ縺｣縺溘″縺｣縺九￠縺ｯ？<br>
+				<label><input type="checkbox" name="how" value="friends">知り合いの紹介で</label>
+				<label><input type="checkbox" name="how" value="magazine">この学校に入学したので</label><br>
+				<label><input type="checkbox" name="how" value="friends">なんかおったから</label>
+				<label><input type="checkbox" name="how" value="magazine">興味ないね</label>
+			</div>
+			<div class="formdiv">
+				<label>今のお気持ちを述べてください<br>
+				<input type="text" name="subject" placeholder="お気持ち"></label>
+			</div>
+			<div class="formdiv">
+				<label>貉ｯ貔､縺ｫ雉ｪ蝠上′縺ゅｌ縺ｰ蜈･蜉帙＠縺ｦ縺上□縺輔＞<br>
+				<textarea name="message" placeholder="ここに入力"></textarea></label>
+			</div>
+			
+				<!-- jsでデータを送信できるようにsubmit -->
+				<input type="submit" name="submit" value="送信！">
+			</form>
+
+
+	</main>
+	
+	<!-- メイン　ここまで -->
+	<!-- フッター -->
+	<footer class="footer">
+	<p>&copy; Copyright Yuzawa.Shuto all rights reserved.</p>
+	</footer>
+	<!-- フッター　ここまで -->
+</div>
+<script src="js/hamberger.js"></script>
+
+</body>
+
+</html>

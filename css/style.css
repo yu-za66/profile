@@ -1,0 +1,536 @@
+@charset "UTF-8";
+/*すべてのページに適応される*/
+a{
+	display:block;
+}
+
+body{
+	margin:0;
+	padding:0;
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+*ul{
+	list-style:disc;
+}
+
+*html{
+	box-sizing: border-box;
+	height:100%;
+}
+.h1{
+	text-align:center;
+}
+
+.wrapper{
+	text-align:center;
+	min-height: 100vh;
+	position: relative;/*←相対位置*/
+	padding-bottom: 120px;/*←footerの高さ*/
+    box-sizing: border-box;/*←全て含めてmin-height:100vhに*/
+	background-image: url("../images/back.jpeg") ;
+	background-size:cover;
+}
+main{
+	/* headerをposition:fixed;にしたため、隠れるのを防ぐ */
+	margin-top:6em;
+}
+
+
+.top{
+	text-align:center;
+}
+
+main{
+	flex:1;
+}
+
+/* 画像設定 */
+img{
+	width:80%;
+}
+/*ハンバーガーメニュー用のCSS*/
+
+header {
+	position: fixed;
+	background-color: black;
+	color: white;
+	z-index: 2;
+	height: 4em;
+	width:100%;
+}
+
+/* 湯澤のホームページ　色変えない */
+.top a{
+	text-decoration: none;
+}
+
+.top a:link{
+	color:white;
+}
+
+.top a:visited{
+	color:white;
+}
+
+.top a:hover{
+	color:white;
+}
+
+.top a:active{
+	color:white;
+}
+/* ---------------------------- */
+.header ul{
+	width:auto;
+	height:80px;
+	font-size:15px;
+	text-align : center;
+}
+
+.header_container {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+.header_container h1 {
+	font-size: 1rem;
+	width: fit-content;
+	position: absolute;
+	top: calc( 50% - .8rem);
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+.menu_container {
+	width: 3em;
+	height: 3em;
+	position: absolute;
+	top: calc(50% - 25px);
+	left: 20px;
+	cursor: pointer;
+}
+.menu_container img {
+	width: 100%;
+	filter: invert(1);
+	position: absolute;
+	top: 0;
+	left: 0;	
+}
+.menu_open {
+	opacity: 1;
+}
+	.menu_open.active {
+		opacity: 0;
+	}
+.menu_close {
+	opacity: 0;
+}
+	.menu_close.active {
+		opacity: 1;
+	}
+
+.menu {
+	background-color:bisque;
+	position: fixed;
+	top: 0;
+	left: -20em;
+	width: 20%;	/*出てきたときの大きさ*/
+	height: 100%;
+	display: grid;
+	justify-content: center;
+	text-align: center;
+	transition: .5s;
+	z-index:1;
+}
+	.menu.active {
+		left: 0;
+	}
+.menu ul {
+	padding-inline: 0;
+	/*リンクのリストを押し出して表示（別の方法で補いたい）*/
+	margin-top:5em;
+	/* overflow:auto;
+	height:100%	; */
+}
+.menu li {
+	list-style: none;
+	margin-top: 1.5rem;
+}
+/*--------------------------------*/
+
+/*カーソル合わせると横に流れるやつ（ブロック）*/
+/*枠設定*/
+
+  .link{
+	position: relative;/*枠内設定*/
+	display: block;
+	padding: .3em 2em;
+	width: 60%;
+	border:  solid 2px #333;
+	margin: 2px 2px 2px 2px;
+	color: #307;
+	text-align: center;
+	text-decoration: none;
+	transition: .5s;
+	z-index: 1;/*指定しないと、色が流れない*/
+	cursor: pointer;
+  }
+/*li.linkの部分のカーソルの判定を拡張 */
+
+
+
+/*------------------------------------*/
+  /*のった瞬間*/
+  /*本来はその要素の前に文字やいろといった物をいれる機能を持つのがbefore*/
+  /* トップ */
+  .ind::before {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: -1;
+	content: '';
+	background: #ff9800;
+	transform-origin: left top;
+	transform: scale(0, 1);/*表示面積*/
+	transition: transform .5s;
+  }
+  /* 趣味 */
+  .hobby::before {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: -1;
+	content: '';
+	background: #f5b2b2;
+	transform-origin: left top;
+	transform: scale(0, 1);/*表示面積*/
+	transition: transform .5s;
+  }
+  /* 最近 */
+  .rec::before {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: -1;
+	content: '';
+	background: #a1cff4;
+	transform-origin: left top;
+	transform: scale(0, 1);/*表示面積*/
+	transition: transform .5s;
+  }
+  /* 解説 */
+  .imp::before {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: -1;
+	content: '';
+	background: #B5FF14;
+	transform-origin: left top;
+	transform: scale(0, 1);/*表示面積*/
+	transition: transform .5s;
+  }
+  /* 参考 */
+  .sou::before {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: -1;
+	content: '';
+	background: #f8f;
+	transform-origin: left top;
+	transform: scale(0, 1);/*表示面積*/
+	transition: transform .5s;
+  }
+/* お問い合わせ */
+  .form::before {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: -1;
+	content: '';
+	background: yellow;
+	transform-origin: left top;
+	transform: scale(0, 1);/*表示面積*/
+	transition: transform .5s;
+  }
+  	/*のってるとき*/
+  .link:hover::before {
+	transform-origin: left top;
+	transform: scale(1, 1);
+  }
+   /*文字のフォント*/
+	.link :visited{
+	color:royalblue;
+  }
+  .link :hover{
+	color:red;
+  }
+  .link :active{
+	color:yellow;
+  }
+
+/*index*/
+.personality{
+	margin-top:50px;
+}
+
+.seikaku{
+	color:#000;
+
+}
+.my-table {
+	width:20%;
+	table-layout: fixed;
+	margin:auto;
+	border-collapse: collapse;
+}
+.table-top{
+	text-align:center;
+}
+.my-table td,.my-table tr{
+	border:3px #666 solid;
+	text-align:left;	
+}
+
+
+
+
+
+/*hobby*/
+
+.played{
+	text-align:center;
+}
+
+.photo-hobby{
+	width:50%;
+	height:50%;
+	margin:auto;
+}
+/* タブ用CSS */
+.tab-wrap {
+	display: flex;
+	flex-wrap: wrap;
+	margin:20px 0;
+	width:80%;
+	margin:auto;
+  }
+  .tab-wrap:after {
+	content: '';
+	width: 100%;
+	height: 3px;
+	background: #325A8C;
+	display: block;
+	order: -1;
+  }
+  .tab-label {
+	color: White;
+	background: LightGray;
+	font-weight: bold;
+	white-space: nowrap;
+	text-align: center;
+	padding: 10px .5em;
+	order: -1;
+	position: relative;
+	cursor: pointer;
+	border-radius: 5px 5px 0 0;
+	flex: 1;
+  }
+
+  .tab-label:not(:last-of-type) {
+	margin-right: 5px;
+  }
+
+  .tab-content {
+	width: 100%;
+	height: 0;
+	overflow: hidden;
+	opacity: 0;
+  }
+
+  .tab-switch:checked+.tab-label {
+	background: #325A8C;
+  }
+
+  .tab-switch:checked+.tab-label+.tab-content {
+	height: auto;
+	overflow: auto;
+	padding: 15px;
+	opacity: 1;
+	transition: .5s opacity;
+	box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  }
+  .tab-switch {
+	display: none;
+  }
+/* ------------------------------ */
+
+.magazine{
+	margin:auto;
+	width:30%;
+	text-align:left;
+}
+
+a{
+	text-decoration: none;
+}
+
+.kiraraduce{
+	border:2px solid;
+	width:80%;
+	margin:auto;
+}
+
+.photo-kirara{
+	width:187px;
+	height:269px;
+}
+
+/*recently*/
+.monitor-point{
+	text-align:left;
+	padding-left:250px;
+}
+
+
+
+/* source */
+iframe{
+	width: 50%;
+	height: 35em;
+}
+
+/* form */
+.formdiv{
+	margin-top: 20px;
+}
+
+/* フッター */
+.footer{
+	text-align: center;
+	width:100%;	
+	background:blueviolet;
+	position: absolute;/*←絶対位置*/
+    bottom: 0; /*下に固定*/
+}
+
+
+
+/*スマートフォン向け*/
+@media(max-width: 767px){
+
+	main{
+		
+		margin-right: 5px;
+		margin-left: 5px;
+	}
+
+	/* メニューバーの設定 */
+	.menu{
+		width:40%;
+	}
+	.link{
+		width:30%;
+		
+		border:  solid 1px #333;
+		text-align:center;
+		margin:auto;
+	}
+	.link a{
+		font-size: 12px;
+		text-align:center;
+		white-space:pre;
+		text-decoration: none;
+	}
+	/* メニューバー文字ずらし */
+	.imp a{
+
+		white-space:normal;
+	}
+	.form a{
+
+		white-space:normal;
+	}
+	/* -------------------- */
+
+	/* 画像設定 */
+	img{
+		max-width:100%;
+		width:80%;
+	}
+	/* ---------- */
+
+	/* index */
+	.my-table{
+		width:60%;
+	}
+
+	/* hobby */
+	.kiraraduce{
+		width:200px;
+		padding:2px 2px 2px 2px;
+	}
+
+
+	.magazine{
+		width:180px;
+	}
+
+
+
+	.magazine li{
+		width:130px;
+	}
+
+	.kiraraduce{
+		border:2px solid;
+		width:80%;
+		margin:auto;
+	}
+
+	.photo-kirara{
+		width:187px;
+		height:269px;
+	}
+
+	/* recently */
+	.monitor-point{
+		padding-left:30px;
+	}
+	
+
+	/* source */
+	iframe{
+		width:80%;
+		height:360px;
+	}
+
+	/* form */
+	.formdiv{
+		display:-webkit-box;
+		display:-ms-flexbox;
+		display:flex;
+		flex-flow: column;
+		border:2px #ccc solid;
+		padding: 4px 4px 4px 4px;
+		margin:0 0 1em;
+	}
+
+
+}
